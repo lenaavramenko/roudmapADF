@@ -1,0 +1,15 @@
+table.user-roles{
+    width:100%;
+}
+
+table.user-roles > thead {
+    background-color: blueviolet;
+    color: #46064e;
+    padding:2px;
+}
+table.user-roles > tbody > tr:hover {
+    background-color: antiquewhite;
+}
+table.user-roles > th {
+    padding:2px;
+}

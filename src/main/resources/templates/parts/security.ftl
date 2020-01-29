@@ -8,7 +8,7 @@
     >
 <#else>
     <#assign
-    name = "guest"
+    name = "user"
     isAdmin = false
     >
 </#if>

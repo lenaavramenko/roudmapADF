@@ -3,7 +3,7 @@
 <@c.page>
     <h3>List of Users</h3>
 
-    <table>
+    <table class="user-roles">
         <thead>
         <tr>
             <th>Name</th>
