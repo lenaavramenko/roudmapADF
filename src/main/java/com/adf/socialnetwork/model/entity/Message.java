@@ -4,9 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 @Data
 @Entity
@@ -18,9 +19,12 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "message_text")
+
+    @NotBlank(message = "Please write a message")
+    @Length(max = 2048, message = "Message is too long (more than 2kB)")
     private String text;
-    @Column(name = "message_tag")
+
+    @Length(max = 255, message = "Tag is too long (more than 255)")
     private String tag;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -37,14 +41,6 @@ public class Message {
 
     public String getAuthorName() {
         return author != null ? author.getUsername() : "<none>";
-    }
-
-    public String getMessageText() {
-        return text != null ? getText() : "<none>";
-    }
-
-    public String getMessageTag() {
-        return tag != null ? getTag() : "<none>";
     }
 
 }

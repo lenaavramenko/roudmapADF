@@ -1,10 +1,10 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-    User editor
+    <h3>User editor</h3>
 
-    <form action="/user" method="post">
-        <input type="text" name="username" value="${user.username}" autocomplete="off">
+    <form action="/user" method="post" autocomplete="off">
+        <input type="text" name="username" value="${user.username}" autocomplete="disabled">
         <#list roles as role>
             <div>
                 <label><input type="checkbox" name="${role}" ${user.roles?seq_contains(role)?string("checked", "")}>${role}</label>
