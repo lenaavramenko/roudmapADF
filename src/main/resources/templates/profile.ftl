@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-    <h5>${username}</h5>
+    <h3>${username}</h3>
     ${message?ifExists}
     <form method="post" autocomplete="off">
         <div class="form-group row">
